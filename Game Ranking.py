@@ -61,8 +61,8 @@ def insert_data():
         name_of_players = get_unique_players()
         final = []
         for name in name_of_players:
-            won = csv_file.loc[csv_file['Won'] == name]   #ll rows having the given name in Won column
-            lost = csv_file.loc[csv_file['Lost'] == name] #all rows having the given name in Lost column
+            won = csv_file.loc[csv_file['Won'] == name]   #all rows containing the given name in Won column
+            lost = csv_file.loc[csv_file['Lost'] == name] #all rows containing the given name in Lost column
             played = len(won) + len(lost)  
             data = {'Player':name,'Played':played,'Won':len(won),'Lost':len(lost)}
             final.append(data)
